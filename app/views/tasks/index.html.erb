@@ -1,0 +1,14 @@
+<h1>Tasks#index</h1>
+<p>below your to do list bro!</p>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.title %></li>
+    <% if task.status == 0 %>
+      <p>a faire</p>
+    <% else %>
+      <p>Done</p>
+    <% end %>
+    <%= link_to "More details", task_path(task.id) %>
+  <% end %>
+</ul>
